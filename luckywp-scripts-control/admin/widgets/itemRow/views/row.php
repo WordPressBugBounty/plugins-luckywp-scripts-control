@@ -11,9 +11,12 @@ if ('' === $caption = $item->caption) {
     $caption = Html::encode($caption);
 }
 ?>
-<div class="lwpscManage_item<?= $item->active ? '' : ' lwpscManage_item-disabled' ?>" data-id="<?= $item->id ?>">
+<div
+    class="lwpscManage_item<?= $item->active ? '' : ' lwpscManage_item-disabled' ?>"
+    data-id="<?= esc_html($item->id) ?>"
+>
     <div class="lwpscManage_item_sortHandle">::</div>
-    <div class="lwpscManage_item_caption"><?= $caption ?></div>
+    <div class="lwpscManage_item_caption"><?= esc_html($caption) ?></div>
     <div class="lwpscManage_item_actions">
         <?php if ($item->active) { ?>
             <div class="lwpscManage_item_disable lwpscManage_item_action dashicons dashicons-hidden" title="<?= esc_attr__('Disable', 'luckywp-scripts-control') ?>"></div>

@@ -15,6 +15,7 @@ class RequiredValidator extends Validator
         parent::init();
         if ($this->message === null) {
             $this->message = sprintf(
+                /* translators: %s: attribute placeholder */
                 esc_html__('%s cannot be blank.', 'luckywp-scripts-control'),
                 '{attribute}'
             );

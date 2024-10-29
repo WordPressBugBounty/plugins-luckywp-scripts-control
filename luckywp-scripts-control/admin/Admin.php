@@ -61,7 +61,13 @@ class Admin extends BaseObject
             Core::$plugin->welcome->isShow()
         ) {
             wp_enqueue_style(Core::$plugin->prefix . 'adminMain', Core::$plugin->url . '/admin/assets/main.min.css', [], Core::$plugin->version);
-            wp_enqueue_script(Core::$plugin->prefix . 'adminMain', Core::$plugin->url . '/admin/assets/main.min.js', ['jquery', 'jquery-ui-sortable'], Core::$plugin->version);
+            wp_enqueue_script(
+                Core::$plugin->prefix . 'adminMain',
+                Core::$plugin->url . '/admin/assets/main.min.js',
+                ['jquery', 'jquery-ui-sortable'],
+                Core::$plugin->version,
+                ['in_footer' => true]
+            );
             wp_localize_script(Core::$plugin->prefix . 'adminMain', 'lwpscMain', [
                 'ajaxUrl' => admin_url('admin-ajax.php'),
                 'nonce' => AjaxNonce::create(),

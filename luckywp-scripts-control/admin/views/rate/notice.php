@@ -9,6 +9,7 @@ use luckywp\scriptsControl\core\admin\helpers\AdminHtml;
         <?= esc_html__('Hello!', 'luckywp-scripts-control') ?>
         <br>
         <?= sprintf(
+            /* translators: %s: plugin name */
             esc_html__('We are very pleased that you are using the %s plugin within a few days.', 'luckywp-scripts-control'),
             '<b>LuckyWP Scripts Control</b>'
         ) ?>

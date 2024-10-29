@@ -3,8 +3,8 @@ Contributors: theluckywp
 Donate link: https://theluckywp.com/product/scripts-control/
 Tags: insert, custom code, css, js, script
 Requires at least: 4.7
-Tested up to: 5.4
-Stable tag: 1.2.2
+Tested up to: 6.6
+Stable tag: 1.2.3
 Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -62,6 +62,9 @@ After the plugin is successfully installed the menu item "Scripts" will appear i
 4. Code Actions
 
 == Changelog ==
+
+= 1.2.3 — 2024-10-29 =
+* Minor refactoring.
 
 = 1.2.2 — 2024-10-08 =
 * Fix vulnerabilities.

@@ -7,7 +7,7 @@ return [
         'front',
         'welcome',
     ],
-    'pluginsLoadedBootstrap' => [
+    'bootstrapAfterSetupTheme' => [
         'settings',
     ],
     'components' => [

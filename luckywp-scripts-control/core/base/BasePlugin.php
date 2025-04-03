@@ -54,14 +54,16 @@ abstract class BasePlugin extends ServiceLocator
     /**
      * @var array
      */
-    public $pluginsLoadedBootstrap = [];
+    public $bootstrapAfterSetupTheme = [];
 
     public function __construct(array $config = [])
     {
         Core::initialize($this);
-        add_action('plugins_loaded', function () {
-            $this->loadTextDomain();
-            $this->bootstrap($this->pluginsLoadedBootstrap);
+        add_action('after_setup_theme', function () {
+            if ($this->textDomain) {
+                load_plugin_textdomain($this->textDomain, false, basename($this->dir) . '/' . $this->domainPath);
+            }
+            $this->bootstrap($this->bootstrapAfterSetupTheme);
         });
         parent::__construct($config);
     }
@@ -98,13 +100,6 @@ abstract class BasePlugin extends ServiceLocator
         $this->url = plugins_url('', $fileName);
         $this->prefix = $prefix;
         $this->bootstrap($this->bootstrap);
-    }
-
-    public function loadTextDomain()
-    {
-        if ($this->textDomain) {
-            load_plugin_textdomain($this->textDomain, false, basename($this->dir) . '/' . $this->domainPath);
-        }
     }
 
     public function getBasename()

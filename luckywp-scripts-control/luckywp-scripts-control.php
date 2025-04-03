@@ -3,7 +3,7 @@
 Plugin Name: LuckyWP Scripts Control
 Plugin URI: https://theluckywp.com/product/scripts-control/
 Description: A great way to insert and manage custom code (CSS, JS, meta tags, etc.) into website before &lt;/head&gt;, after &lt;body&gt; or before &lt;/body&gt;.
-Version: 1.2.3
+Version: 1.2.4
 Author: LuckyWP
 Author URI: https://theluckywp.com/
 License: GPLv2 or later
@@ -31,4 +31,4 @@ $lwpscAutoloader->register();
 $lwpscAutoloader->addNamespace('luckywp\scriptsControl', __DIR__);
 
 $config = require(__DIR__ . '/config/plugin.php');
-(new \luckywp\scriptsControl\plugin\Plugin($config))->run('1.2.3', __FILE__, 'lwpsc_');
+(new \luckywp\scriptsControl\plugin\Plugin($config))->run('1.2.4', __FILE__, 'lwpsc_');

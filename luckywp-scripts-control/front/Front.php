@@ -9,10 +9,9 @@ use luckywp\scriptsControl\plugin\entities\Area;
 
 class Front extends BaseObject
 {
-
     public function init()
     {
-        add_action('plugins_loaded', function () {
+        add_action('init', function () {
             $itemsByArea = Core::$plugin->items->findAllGroupedByArea(true);
 
             if ($itemsByArea[Area::HEAD]) {
